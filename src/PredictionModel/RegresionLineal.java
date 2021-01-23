@@ -7,20 +7,24 @@ import static java.util.Arrays.asList;
 
 import java.util.LinkedList;
 
-public class RegresionLineal {
+public class RegresionLineal 
+{
 	// Hacemos listas de listas
 	private List<Integer> x; // X son los datos historicos
 	private List<Integer> y; // Y son los resultados
 	
 	//Constructor
-	public RegresionLineal(List x, List y){
+	public RegresionLineal(List x, List y)
+	{
 		this.x = x;
 		this.y = y;
 	}
 	
-	public List<Double> predecir() {
+	public List<Double> predecir() 
+	{
 		// Excepcion cuando el tamaño de X e Y son distintos
-		if (x.size() != y.size()) {
+		if (x.size() != y.size()) 
+		{
             throw new IllegalStateException("Must have equal X and Y data points");
         }
         
@@ -66,19 +70,22 @@ public class RegresionLineal {
         
         List<Double> Y = new LinkedList<Double>(asList());
         
-        for(int i = 0; i < valoresX; i++) {
+        for(int i = 0; i < valoresX; i++) 
+        {
 	        Y.add(alpha + (beta * x.get(i)));
         }
         
         int n = 0;
-        for(int i = 0; i < valoresX; i++) {
+        for(int i = 0; i < valoresX; i++) 
+        {
         	n += Y.get(i) - sumatoriaY;
         }
 
         Double SSR = Math.pow(n, 2);
         
         n = 0;
-        for(int i = 0; i < valoresX; i++) {
+        for(int i = 0; i < valoresX; i++) 
+        {
         	n += y.get(i) - sumatoriaY;
         }
         
@@ -89,16 +96,19 @@ public class RegresionLineal {
         System.out.println();
     	System.out.println("R2: " + R2);
         
-    	for(int i = 0; i < valoresX; i++) {
+    	for(int i = 0; i < valoresX; i++) 
+    	{
         	System.out.println("Y actual: " + y.get(i) + " | Y predict: " + Y.get(i));
         }
     	
         return Y;
 	}
 	
-	public Double predecirValor(int X) {
+	public Double predecirValor(int X) 
+	{
     	// Excepcion cuando el tamaño de X e Y son distintos
-		if (x.size() != y.size()) {
+		if (x.size() != y.size()) 
+		{
             throw new IllegalStateException("Must have equal X and Y data points");
         }
         
