@@ -1,6 +1,6 @@
 /**~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
- * Universidad de los Andes (Bogotá - Colombia)
- * Departamento de Ingeniería de Sistemas y Computación 
+ * Universidad de los Andes (Bogotï¿½ - Colombia)
+ * Departamento de Ingenierï¿½a de Sistemas y Computaciï¿½n 
  * Licenciado bajo el esquema Academic Free License version 2.1 
  *
  * Proyecto Cupi2 (http://cupi2.uniandes.edu.co)
@@ -23,7 +23,7 @@ import javax.swing.UIManager;
    
 
 /**
- * Ventana principal de la aplicación.
+ * Ventana principal de la aplicaciï¿½n.
  */
 @SuppressWarnings("serial")
 public class InterfazPricipal extends JFrame
@@ -64,7 +64,7 @@ public class InterfazPricipal extends JFrame
     // -----------------------------------------------------------------
 
     /**
-     * Construye la ventana principal de la aplicación y sus paneles.
+     * Construye la ventana principal de la aplicaciï¿½n y sus paneles.
      */
     public InterfazPricipal( )
     {
@@ -79,14 +79,16 @@ public class InterfazPricipal extends JFrame
         getContentPane( ).add( panelImagen, BorderLayout.NORTH );
 
         JPanel panelCandidatos = new JPanel( );
-        panelCandidatos.setLayout( new GridLayout( 1, 2 ) );
+        
+        panelCandidatos.setLayout( new BorderLayout( ) );
+        
         getContentPane( ).add( panelCandidatos, BorderLayout.CENTER );
         
         marketingStrategy = new PanelMarketingStrategy( this);
-        panelCandidatos.add( marketingStrategy );
+        panelCandidatos.add( marketingStrategy,BorderLayout.CENTER  );
         
         Notificaciones = new PanelNotificaciones( this);
-        panelCandidatos.add( Notificaciones );
+        panelCandidatos.add( Notificaciones,BorderLayout.EAST  );
         
 
         panelOpciones = new PanelOpciones( this );
@@ -97,6 +99,7 @@ public class InterfazPricipal extends JFrame
 
    
     }
+    
 
 
     // -----------------------------------------------------------------
@@ -105,8 +108,8 @@ public class InterfazPricipal extends JFrame
 
     
     /**
-     * Ejecuta la aplicación.
-     * @param pArgs Parámetros de la ejecución. No son necesarios.
+     * Ejecuta la aplicaciï¿½n.
+     * @param pArgs Parï¿½metros de la ejecuciï¿½n. No son necesarios.
      */
     public static void main( String[] pArgs )
     {

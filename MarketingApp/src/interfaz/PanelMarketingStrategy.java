@@ -17,10 +17,11 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
+import Graficas.main.Graph;
 
 
 /**
- * Panel que contiene la información de un candidato.
+ * Panel que contiene la informaciï¿½n de un candidato.
  */
 @SuppressWarnings("serial")
 public class PanelMarketingStrategy extends JPanel implements ActionListener
@@ -37,9 +38,11 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
     // -----------------------------------------------------------------
 
     /**
-     * Ventana principal de la aplicación.
+     * Ventana principal de la aplicaciï¿½n.
      */
     private InterfazPricipal principal;
+    
+    
 
 
     // -----------------------------------------------------------------
@@ -48,51 +51,115 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
 
 
 
+    private JLabel lblGeneroPotencial;
+    
+
+    private JLabel lblEdadPotencial;
+    
+
+    private JLabel lblestadocivil;
+
+  
+    private JTextField txtGenero;
+   
+
+    private JTextField txtEdad;
+    
+ 
+    private JTextField txtEstado;
+    
+    
     // -----------------------------------------------------------------
     // Constructores
     // -----------------------------------------------------------------
 
     /**
      * Constructor del panel.
-     * @param pPrincipal Ventana principal de la aplicación. pPrincipal != null.
+     * @param pPrincipal Ventana principal de la aplicaciï¿½n. pPrincipal != null.
      */
     public PanelMarketingStrategy( InterfazPricipal pPrincipal )
     {
         principal = pPrincipal;
         
         
-        JPanel panelImagen = new JPanel( );
-        JPanel panelInformacionGlobal = new JPanel( );
-        JPanel panelInformacionDatos = new JPanel( );
-        JPanel panelInformacionBotones = new JPanel( );
+        JPanel panelInfo = new JPanel( );
+        
+        JPanel panelGraficos = new JPanel( );
+        
+        JPanel panelGraficoVentas = new JPanel( );
+        JPanel panelGraficoGenero = new JPanel( );
+        JPanel panelGraficoEdad = new JPanel( );
+        JPanel panelGraficoEstadoCivil = new JPanel( );
 
         setLayout( new java.awt.BorderLayout( ) );
-        setBorder( javax.swing.BorderFactory.createTitledBorder( "ChatBot") );
+        setBorder( javax.swing.BorderFactory.createTitledBorder( "Formulario") );
 
-        panelImagen.setLayout( new BorderLayout( ) );
+        
+        
+        panelInfo.setLayout( new GridLayout(3,2) );
+
+
+        add( panelInfo, BorderLayout.NORTH );
+       
+        lblGeneroPotencial = new JLabel("Genero Potencial:");
+        lblGeneroPotencial.setHorizontalAlignment( JLabel.LEFT );
+        
+        lblEdadPotencial = new JLabel("Edad Potencial:");
+        lblEdadPotencial.setHorizontalAlignment( JLabel.LEFT );
+        
+        lblestadocivil = new JLabel("Estado civil Potencial:");
+        lblestadocivil.setHorizontalAlignment( JLabel.LEFT );
+        
+        txtGenero = new JTextField( );
+        txtGenero.setEditable( false );
+        txtGenero.setFont( new Font( "Dialog", Font.BOLD, 12 ) );
+        
+        txtEdad = new JTextField( );
+        txtEdad.setEditable( false );
+        txtEdad.setFont( new Font( "Dialog", Font.BOLD, 12 ) );
+        
+        txtEstado = new JTextField( );
+        txtEstado.setEditable( false );
+        txtEstado.setFont( new Font( "Dialog", Font.BOLD, 12 ) );
+        
+        panelInfo.add( lblGeneroPotencial );
+        panelInfo.add( txtGenero );
+        
+        panelInfo.add( lblEdadPotencial );
+        panelInfo.add( txtEdad );
+        
+        panelInfo.add( lblestadocivil );
+        panelInfo.add( txtEstado );
+
+        
+        
+        panelGraficos.setLayout( new GridLayout(2,2) );
+        
+        add( panelGraficos, BorderLayout.CENTER );
 
         JLabel temp = new JLabel( );
         temp.setHorizontalAlignment( JLabel.CENTER );
         temp.setIcon( new ImageIcon( "data/imagenes/list.png") );
+        
+     
+        JLabel temp2 = new JLabel( );
+        temp2.setHorizontalAlignment( JLabel.CENTER );
+        temp2.setIcon( new ImageIcon( "data/imagenes/notificacion.png") );
+        
+        panelGraficoVentas.add(temp, BorderLayout.CENTER);
+        panelGraficoEstadoCivil.add(temp2, BorderLayout.CENTER);
+        
+        panelGraficos.add( panelGraficoVentas);
+        panelGraficos.add( panelGraficoGenero);
+        panelGraficos.add( panelGraficoEdad);
+        panelGraficos.add( panelGraficoEstadoCivil);
+        
+        
 
-        panelImagen.add( temp, BorderLayout.CENTER );
-
-        add( panelImagen, BorderLayout.CENTER );
-
-        panelInformacionGlobal.setLayout( new BorderLayout( ) );
-        panelInformacionDatos.setLayout( new GridLayout( 6, 2 ) );
-        panelInformacionBotones.setLayout( new GridLayout( 2, 1 ) );
-
-
-
-        panelInformacionGlobal.add( panelInformacionDatos, BorderLayout.CENTER );
-        panelInformacionGlobal.add( panelInformacionBotones, BorderLayout.SOUTH );
-
-        add( panelInformacionGlobal, BorderLayout.SOUTH );
     }
 
     // -----------------------------------------------------------------
-    // Métodos
+    // Mï¿½todos
     // -----------------------------------------------------------------
 
 
