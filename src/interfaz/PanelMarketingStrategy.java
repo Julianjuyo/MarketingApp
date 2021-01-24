@@ -15,7 +15,8 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
-import Graficas.main.Graph;
+
+import Graficas.frames.PanelGraficas;
 
 
 /**
@@ -59,7 +60,7 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
 
   
     private JTextField txtGenero;
-   
+    
 
     private JTextField txtEdad;
     
@@ -84,16 +85,14 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
         
         JPanel panelGraficos = new JPanel( );
         
-        JPanel panelGraficoVentas = new JPanel( );
-        JPanel panelGraficoGenero = new JPanel( );
-        JPanel panelGraficoEdad = new JPanel( );
-        JPanel panelGraficoEstadoCivil = new JPanel( );
+        PanelGraficas panelGraficoVentas = new PanelGraficas(new int[]{0, 10, 6, 5, 2, 1, 0, 10}, new int[]{0, 1, 2, 3, 4, 5, 6, 7}, Color.gray, Color.black, PanelGraficas.LINEGRAPHMODE);
+        PanelGraficas panelGraficoGenero = new PanelGraficas(new int[]{7, 3}, new int[]{0, 1}, Color.yellow, Color.red, PanelGraficas.BARGRAPHMODE);
+        PanelGraficas panelGraficoEdad = new PanelGraficas(new int[]{17, 20, 19, 22, 21, 22, 20, 18, 19, 20, 22, 20, 17, 22, 25, 18, 20}, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}, Color.red, Color.blue, PanelGraficas.LINEGRAPHMODE);
+        PanelGraficas panelGraficoEstadoCivil = new PanelGraficas(new int[]{6, 1, 3}, new int[]{0, 1, 2}, Color.pink, Color.orange, PanelGraficas.BARGRAPHMODE);
 
         setLayout( new java.awt.BorderLayout( ) );
         setBorder( javax.swing.BorderFactory.createTitledBorder( "Formulario") );
 
-        
-        
         panelInfo.setLayout( new GridLayout(3,2) );
 
 
@@ -135,25 +134,10 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
         
         add( panelGraficos, BorderLayout.CENTER );
 
-        JLabel temp = new JLabel( );
-        temp.setHorizontalAlignment( JLabel.CENTER );
-        temp.setIcon( new ImageIcon( "data/imagenes/list.png") );
-        
-     
-        JLabel temp2 = new JLabel( );
-        temp2.setHorizontalAlignment( JLabel.CENTER );
-        temp2.setIcon( new ImageIcon( "data/imagenes/notificacion.png") );
-        
-        panelGraficoVentas.add(temp, BorderLayout.CENTER);
-        panelGraficoEstadoCivil.add(temp2, BorderLayout.CENTER);
-        
         panelGraficos.add( panelGraficoVentas);
         panelGraficos.add( panelGraficoGenero);
         panelGraficos.add( panelGraficoEdad);
         panelGraficos.add( panelGraficoEstadoCivil);
-        
-        
-
     }
 
     // -----------------------------------------------------------------
@@ -171,5 +155,5 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
 
 
     }
-
+>>>>>>> rama_graficas
 }
