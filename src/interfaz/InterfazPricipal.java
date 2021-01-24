@@ -62,16 +62,15 @@ public class InterfazPricipal extends JFrame
     // -----------------------------------------------------------------
     // Constructores
     // -----------------------------------------------------------------
-
+    
     /**
      * Construye la ventana principal de la aplicaci�n y sus paneles.
      */
     public InterfazPricipal( )
-    {
-        setTitle( "marketing App " );
+    {	
+        setTitle( "Marketing App " );
         setSize( 700, 650 );
         setDefaultCloseOperation( JFrame.EXIT_ON_CLOSE );
-
 
         setLayout( new BorderLayout( ) );
 
@@ -79,16 +78,14 @@ public class InterfazPricipal extends JFrame
         getContentPane( ).add( panelImagen, BorderLayout.NORTH );
 
         JPanel panelCandidatos = new JPanel( );
-        
-        panelCandidatos.setLayout( new BorderLayout( ) );
-        
+        panelCandidatos.setLayout( new GridLayout( 1, 2 ) );
         getContentPane( ).add( panelCandidatos, BorderLayout.CENTER );
         
         marketingStrategy = new PanelMarketingStrategy( this);
-        panelCandidatos.add( marketingStrategy,BorderLayout.CENTER  );
+        panelCandidatos.add( marketingStrategy );
         
         Notificaciones = new PanelNotificaciones( this);
-        panelCandidatos.add( Notificaciones,BorderLayout.EAST  );
+        panelCandidatos.add( Notificaciones );
         
 
         panelOpciones = new PanelOpciones( this );
@@ -96,35 +93,5 @@ public class InterfazPricipal extends JFrame
 
         setLocationRelativeTo( null );
         setResizable( false );
-
-   
     }
-    
-
-
-    // -----------------------------------------------------------------
-    // Main
-    // -----------------------------------------------------------------
-
-    
-    /**
-     * Ejecuta la aplicaci�n.
-     * @param pArgs Par�metros de la ejecuci�n. No son necesarios.
-     */
-    public static void main( String[] pArgs )
-    {
-        try
-        {
-            // Unifica la interfaz para Mac y para Windows.
-            UIManager.setLookAndFeel( UIManager.getCrossPlatformLookAndFeelClassName( ) );
-
-            InterfazPricipal interfaz = new InterfazPricipal( );
-            interfaz.setVisible( true );
-        }
-        catch( Exception e )
-        {
-            e.printStackTrace( );
-        }
-    }
-
 }

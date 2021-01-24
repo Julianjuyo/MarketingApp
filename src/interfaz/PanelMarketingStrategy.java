@@ -1,5 +1,3 @@
-
-
 package interfaz;
 
 import java.awt.BorderLayout;
@@ -173,4 +171,5 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
 
 
     }
+
 }
