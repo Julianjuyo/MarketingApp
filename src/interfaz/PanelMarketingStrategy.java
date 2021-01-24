@@ -153,7 +153,8 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
     public void actionPerformed( ActionEvent pEvento )
     {
 
+    	
 
     }
->>>>>>> rama_graficas
+
 }
