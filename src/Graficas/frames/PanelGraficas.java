@@ -106,9 +106,7 @@ public class PanelGraficas extends JPanel
         
         for(int i = 0; i < x.length; i++)
         {
-        	System.out.println(factorY);
-        	//System.out.println(y[i]);
-            g2d.fillRect(x[i], y[i], 8, 180);
+            g2d.fillRect(x[i], y[i], 20, 180);
         }
     }
     

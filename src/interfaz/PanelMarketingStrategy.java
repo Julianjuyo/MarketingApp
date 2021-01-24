@@ -87,9 +87,9 @@ public class PanelMarketingStrategy extends JPanel implements ActionListener
         
         JPanel panelGraficos = new JPanel( );
         
-        PanelGraficas panelGraficoVentas = new PanelGraficas(new int[]{0, 10, 6, 5, 2}, new int[]{0, 1, 2, 3, 4}, Color.gray, Color.black, PanelGraficas.LINEGRAPHMODE);
+        PanelGraficas panelGraficoVentas = new PanelGraficas(new int[]{0, 10, 6, 5, 2, 1, 0, 10}, new int[]{0, 1, 2, 3, 4, 5, 6, 7}, Color.gray, Color.black, PanelGraficas.LINEGRAPHMODE);
         PanelGraficas panelGraficoGenero = new PanelGraficas(new int[]{7, 3}, new int[]{0, 1}, Color.yellow, Color.red, PanelGraficas.BARGRAPHMODE);
-        PanelGraficas panelGraficoEdad = new PanelGraficas(new int[]{0, 20, 19, 22, 0}, new int[]{0, 1, 2, 3, 4}, Color.red, Color.blue, PanelGraficas.LINEGRAPHMODE);
+        PanelGraficas panelGraficoEdad = new PanelGraficas(new int[]{17, 20, 19, 22, 21, 22, 20, 18, 19, 20, 22, 20, 17, 22, 25, 18, 20}, new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16}, Color.red, Color.blue, PanelGraficas.LINEGRAPHMODE);
         PanelGraficas panelGraficoEstadoCivil = new PanelGraficas(new int[]{6, 1, 3}, new int[]{0, 1, 2}, Color.pink, Color.orange, PanelGraficas.BARGRAPHMODE);
 
         setLayout( new java.awt.BorderLayout( ) );
